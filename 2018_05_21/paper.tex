@@ -60,7 +60,7 @@
 \begin{itemize}
 \item CDW is a phase transition at low $T$
 \item Metals undergo a phase transition when they are cooled
-\item i.e. Iron and nickel become FM. Lead and Al become superconductors
+% \item i.e. Iron and nickel become FM. Lead and Al become superconductors
 \item Since 1970s, many layered materials have been found to undergo a this type of a phase transition
 \item Want to study CDW
 \end{itemize}
@@ -210,7 +210,7 @@
 \begin{frame}{Inelastic x-ray scattering measurement of $S(\vf{Q}, \omega)$}
 \begin{itemize}
 \item Why measured $S(\vf{Q}, \omega)$? ``Because they can" - Lucas
-\item Dashed lines are calculated using DFPT with PBE functional
+% \item Dashed lines are calculated using DFPT with PBE functional
 \begin{figure}
 \includegraphics[width=3.5in]{figs/exp_sq.pdf}
 \caption{\label{fig:exp_sq} Phonon dynamic structure factor at $T = 300~\mathrm{K}$}
@@ -255,7 +255,49 @@
 
 \begin{frame}{My research}
 \begin{itemize}
-\item \textit{Goal:} Identify phonon-softening modes of charge density wave
+\item \textit{Goal:} Identify phonon-softening modes of charge density waves in \ce{SrCuO2} and \ce{La2CuO4}???
+\item Step 1: Optimize the geometry of undoped and 1/4-doped \ce{SrCuO2} using DFT with 2x2 unit cells and PBEsol functional
+\item Step 2: Find phonon frequencies and eigenvectors at the gamma point
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Identify how modes change after doping}
+\begin{itemize}
+\item The matrix element of $i$th AFM mode and $j$th Flip mode
+\begin{align}
+e_{ij} = \sum_{k = 1}^{48} v_{\text{AFM}, ik} \times v_{\text{Flip}, jk}
+\end{align}
+\item The two modes whose dot product is more than 0.8 are consider to be the same
+\begin{table}
+% \centering
+% \caption{\label{tab:dot} Dot products of  \ce{SrCuO2} (normallized within each column)}
+% \caption{\label{tab:widgets}Example values of the magnetic susceptibility, $\chi_v$.}
+\begin{tabular}{ccccccccccc}
+AFM / Flip & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+% \colrule \\
+1 & 0 & 0 & 0.895 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+2 & 0.895 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+3 & 0 & 0.875 & 0 & 0 & 0 & 0 & 0.001 & 0 & 0 & 0.047 \\
+4 & 0 & 0 & 0 & 0.805 & 0 & 0 & 0 & 0 & 0 & 0 \\
+5 & 0 & 0 & 0 & 0 & 0.806 & 0 & 0 & 0 & 0 & 0 \\
+6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1.000 & 0 \\
+\end{tabular}
+\end{table}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The change in phonon frequency}
+\begin{figure}
+\includegraphics[width=4.2in]{figs/sco_afm_flip_freq.pdf}
+\caption{\label{fig:sco_afm_flip_freq} See AVI files}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Conclusion}
+\begin{itemize}
+\item Kohn: Charge density waves affect phonon frequencies
+\item Dean: CDW in LCO and YBCO might be of the same origin
+\item My research: Doping weakens the Sr-O and Cu-O bonds
 \end{itemize}
 \end{frame}
 

@@ -50,7 +50,7 @@
 \item What is a charge density wave?
 \item Summary of Miao and Dean's paper
 \item My research
-\item Summary
+\item Conclusion
 \end{itemize}
 \end{frame}
 
@@ -64,25 +64,105 @@ M_2 \frac{d^2}{dt^2} u_2^l = K(u_1^{l + 1} - u_2^l) - K(u_2^l - u_1^l) = K(u_1^{
 \end{align*}
 \begin{figure}
 \includegraphics[width=3in]{figs/1d_diagram.png}
-\caption{\label{fig:1d_diagram} Alternating masses $M_1$ and $M_2$ interacting with nearest neighbors}
+\caption{\label{fig:1d_diagram}} % Alternating masses $M_1$ and $M_2$ interacting with nearest neighbors
 \end{figure}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Phonon branches}
 \begin{itemize}
-\item Assuming a solution of the form $u_j^l = A_j e^{i(kla - \omega t)}$,
-we solve for $\omega$ that gives no trivial solutions (setting $M_2 = r M_1$):
+\item Plug in $u_j^l = A_j e^{i(kla - \omega t)}$
+\item Solve for $\omega$ that gives no trivial solutions (setting $M_2 = r M_1$):
 \begin{align}
 \omega = \sqrt{\frac{K}{M_1}}
 \sqrt{\frac{1 + r \pm \sqrt{1 + 2r\cos{ka} + r^2}}{r}}.
 \end{align}
 \begin{figure}
 \includegraphics[width=3in]{figs/1d_dispersion.pdf}
-\caption{\label{fig:1d_dispersion} Vibrational frequencies of a chain with two alternating masses when $r = 3$}
+\caption{\label{fig:1d_dispersion} $\omega(k)$ when $r = 3$}
 \end{figure}
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Crystalline lattices are \textbf{not} 1D chains}
+\begin{itemize}
+% \item They are not 3D mass-spring lattices either
+% \item But the idea is correct given small deviations
+% \item Let $\vf{u}^1$ ... $\vf{u}^N$ describe the displacement of ions $1$ ... $N$ from their equilibrium locations $\vf{R}^1$ ... $\vf{R}^N$
+\item Take the energy functional to be
+\begin{align*}
+\mathcal{E}(\vf{u}^1, \vf{u}^2~...~\vf{u}^N) = \mathcal{E}(u_x^1, u_y^1, u_z^1, u_x^2, u_y^2, u_z^2~...~u_x^N, u_y^N, u_z^N).
+\end{align*}
+\item The second-order Taylor series expansion around $\vf{O} = (\vf{0}^1, \vf{0}^2~...~\vf{0}^N)$ is
+\begin{align}
+\mathcal{E} &= \mathcal{E}(\vf{O}) + \sum_{\alpha,i} \frac{\partial \mathcal{E}(\vf{O})}{\partial u_\alpha^i}u_\alpha^i + \frac{1}{2} \sum_{\alpha,i} \sum_{\beta,j} \frac{\partial^2 \mathcal{E}(\vf{O})}{\partial u_\alpha^i \partial u_\beta^j} u_\alpha^i u_\beta^j, \\
+&= \mathcal{E}_c + \frac{1}{2} \sum_{\alpha,i} \sum_{\beta,j} u_\alpha^i \Phi_{\alpha \beta}^{i j} u_\beta^{j}, \label{eq:3d_energy},
+\end{align}
+where $\alpha$ and $\beta$ range over $x$, $y$, and $z$, and $i$ and $j$ range from $1$ to $N$.
+\end{itemize}
+\end{frame}
+
+% \begin{frame}{}
+% \begin{itemize}
+% % \item The first term is the cohesive energy, which is a constant denoted by $\mathcal{E}_c$
+% \item Since the lowest energy state is a minimum as a function of ion locations, $\partial \mathcal{E}(\vf{O}) / \partial u_\alpha^i$ is zero for every $\alpha$ and $i$. The second term is zero
+% % \begin{align}
+% % \mathcal{E} = \mathcal{E}_c + \frac{1}{2} \sum_{\alpha,i} \sum_{\beta,j} u_\alpha^i \Phi_{\alpha \beta}^{i j} u_\beta^{j}, \label{eq:3d_energy}
+% % \end{align}
+% where $\Phi_{\alpha \beta}^{i j}$ is given by
+% \begin{align}
+% \Phi_{\alpha \beta}^{i j} = \frac{\partial^2 \mathcal{E}(\vf{O})}{\partial u_\alpha^i \partial u_\beta^j}.
+% \end{align}
+% \end{itemize}
+% \end{frame}
+
+\begin{frame}{}
+\begin{itemize}
+\item Taking the derivative to find force
+\begin{align*}
+F_x &=&&-\frac{\partial \mathcal{E}}{\partial u_x^l} = -\sum_i
+\begin{bmatrix}
+\Phi_{xx}^{li} & \Phi_{xy}^{li} & \Phi_{xz}^{li}
+\end{bmatrix}
+\begin{bmatrix}
+u_x^i & u_y^i & u_z^i
+\end{bmatrix}^\text{T}.
+\end{align*}
+\item Similarly for $F_y$ and $F_z$, the equation of motion is therefore
+\begin{align}
+\boxed{M \ddot{\vf{u}}^l = -\sum_i
+\begin{bmatrix}
+\Phi_{xx}^{li} & \Phi_{xy}^{li} & \Phi_{xz}^{li} \\
+\Phi_{yx}^{li} & \Phi_{yy}^{li} & \Phi_{yz}^{li} \\
+\Phi_{zx}^{li} & \Phi_{zy}^{li} & \Phi_{zz}^{li}
+\end{bmatrix}
+\begin{bmatrix}
+u_x^i \\
+u_y^i \\
+u_z^i
+\end{bmatrix} = -\sum_i \Phi^{li} \vf{u}^i}, \label{eq:phonon_motion}
+\end{align}
+where the subscripts are suppressed in the $3 \times 3$ matrix $\Phi^{li}$.
+\item Plug in, $\vf{u}^l = \vf{A} e^{i (\vf{k} \cdot \vf{R}^l - \omega t)}$
+\begin{align}
+M \omega^2 \vf{A} &= \sum_{l^{\prime}} \Phi^{l l^{\prime}} e^{i \vf{k} \cdot (\vf{R}^{l^{\prime}} - \vf{R}^l)} \vf{A} = \Phi(\vf{k}) \vf{A}, \label{eq:phonon_motion_matrix}
+\end{align}
+\end{itemize}
+\end{frame}
+
+% \begin{frame}{}
+% \begin{itemize}
+% \item Plug in, $\vf{u}^l = \vf{A} e^{i (\vf{k} \cdot \vf{R}^l - \omega t)}$
+% \begin{align}
+% M \omega^2 \vf{A} &= \sum_{l^{\prime}} \Phi^{l l^{\prime}} e^{i \vf{k} \cdot (\vf{R}^{l^{\prime}} - \vf{R}^l)} \vf{A} = \Phi(\vf{k}) \vf{A}, \label{eq:phonon_motion_matrix}
+% \end{align}
+% where we replace the dummy index $i$ with $l^{\prime}$ to distinguish from the imaginary unit % , and
+% % \begin{align}
+% % \Phi(\vf{k}) = \sum_{l^{\prime}} e^{i \vf{k} \cdot (\vf{R}^l - \vf{R}^{l^{\prime}})} \Phi^{l l^{\prime}}. \label{eq:dyn_matrix}
+% % \end{align}
+% % \item Eq.~(\ref{eq:phonon_motion_matrix}) is a matrix equation for the polarization vector $\vf{A}$
+% \end{itemize}
+% \end{frame}
 
 \begin{frame}{Origin of charge density waves (CDW)}
 \begin{itemize}
@@ -91,7 +171,7 @@ we solve for $\omega$ that gives no trivial solutions (setting $M_2 = r M_1$):
 \item When $T < T_c$, the Fermi surface becomes unstable
 \item The instability may result in periodic charge density modulation called CDW
 \item In 1950s, Fr\"{o}hlich tried to explain SC that electrons and lattices move together
-\item No unifying description for CDW in different systems?
+% \item No unifying description for CDW in different systems?
 \end{itemize}
 \end{frame}
 
@@ -134,164 +214,9 @@ we solve for $\omega$ that gives no trivial solutions (setting $M_2 = r M_1$):
 \end{itemize}
 \end{frame}
 
-% \begin{frame}{Classical lattice vibration}
-% \begin{itemize}
-% % \item Solid elasticity theory fails when the deformation wavelength is comparable to inter-atomic distances
-% % \item Phonons are traveling waves in crystals
-% \item Consider a one-dimensional chain of ions of mass~$M$ sitting at equilibrium distance~$a$ connected by springs of constant~$K$
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \begin{itemize}
-% \item Let $u^l$ denote the deviation of ion $l \in [0, ..., N - 1]$ from its equilibrium location, with periodic boundary conditions implying that
-% \begin{align}
-% u^N = u^0 \label{eq:periodic_cond}
-% \end{align}
-% The system equation is given by
-% \begin{align}
-% M \frac{d^2}{dt^2}u^l = K(u^{l + 1} - u^l) - K(u^l - u^{l - 1}) \label{eq:1d_chain}
-% \end{align}
-% The equation is solved by plane waves. Let
-% \begin{align}
-% u^l = A e^{i(k l a - \omega t)}. \label{eq:planewave}
-% \end{align}
-% Eq.~(\ref{eq:periodic_cond}) requires
-% \begin{align}
-% k N a = 2 \pi n,~k = \frac{2 \pi n}{N a},~n \in [0, ..., N - 1].
-% \end{align}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \begin{itemize}
-% \item Substituting Eq.~(\ref{eq:planewave}) into Eq.~(\ref{eq:1d_chain}) gives
-% \begin{align}
-% -M \omega^2 A e^{i(k l a - \omega t)} &= [K(e^{i k a} - 1) - K(1 - e^{- i k a})] A e^{i (k l a - \omega t)} \notag \\
-% -M \omega^2 &= 2 K [\cos(i k a) - 1] = 2 K \left[-2 \sin^2{\left(\frac{i k a}{2}\right)}\right] \notag \\
-% \omega &= 2 \sqrt{\frac{K}{M}} \left|\sin{\left(\frac{k a}{2}\right)}\right|
-% \end{align}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}{Two characteristic features of this solution}
-
-% 1. $\omega \propto |k|$ when $k \rightarrow 0$.
-% \begin{itemize}
-% \item Linear elasticity for waves much longer than the interatomic spacing
-% \item $d \omega / dk = a \sqrt{K / M} = c$ near the origin is the sound speed
-% \end{itemize}
-% 2. The solution repeats as a function of $k$ with period $2 \pi / a$.
-% \begin{itemize}
-% \item The phonon problem concerns waves moving the medium that is periodic with period $a$
-% \item The same reason that energies of electrons are periodic functions of wave vector $\vf{k}$
-% \end{itemize}
-% \end{frame}
-
-
-% \begin{frame}{}
-% \begin{itemize}
-% \item Assuming a solution of the form $u_j^l = A_j e^{i(kla - \omega t)}$, we get
-% \begin{align}
-% -\omega^2 M_1 A_1 &= K[A_2 - 2 A_1 + A_2 e^{- i k a}]. \\
-% -\omega^2 M_2 A_2 &= K[A_1e^{i k a} - 2 A_2 + A_1].
-% \end{align}
-% Grouping the coefficients of $A_1$ and $A_2$ gives
-% \begin{align}
-% (\omega^2 M_1 - 2 K)A_1 + (K + K e^{- i k a})A_2 = 0. \label{eq:system_1} \\
-% (K e^{i k a} + K)A_1 + (\omega^2 M_2 - 2 K)A_2 = 0. \label{eq:system_2}
-% \end{align}
-% Set the determinant of the system to zero:
-% \begin{align*}
-% M_1 M_2 \omega^4 - 2K (M_1 &+ M_2)\omega^2 + 4K^2 \\
-% &- K^2(1 + e^{- i k a})(1 + e^{i k a}) = 0.
-% \end{align*}
-% Solve for $\omega$:
-% \begin{align*}
-% M_1 M_2 \omega^4 - 2K (M_1 + M_2)\omega^2 + K^2[2 - (e^{- i k a} + e^{i k a})] &= 0. \\
-% M_1 M_2 \omega^4 - 2K (M_1 + M_2)\omega^2 + 2 K^2(1 - \cos{ka}) = 0.
-% \end{align*}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}{}
-% \begin{align}
-% \omega^2 &= \frac{K(M_1 + M_2) \pm K\sqrt{(M_1 + M_2)^2 - 2 M_1 M_2 (1 - \cos{ka})}}{M_1 M_2}. \notag \\
-% \omega &= \sqrt{K}\sqrt{\frac{M_1 + M_2 \pm \sqrt{M_1^2 + 2 M_1 M_2 \cos{ka} + M_2^2}}{M_1 M_2}}. \label{eq:disp_rel_basis}
-% \end{align}
-% Setting $M_2 = r M_1$ gives
-% \begin{align}
-% \omega = \sqrt{\frac{K}{M_1}}
-% \sqrt{\frac{1 + r \pm \sqrt{1 + 2r\cos{ka} + r^2}}{r}} \label{eq:disp_rel_basis_m1}.
-% \end{align}
-% \begin{itemize}
-% \item The two solutions of Eq.~(\ref{eq:disp_rel_basis}) are two \textit{branches} of the phonon dispersion relation
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}{}
-% \begin{itemize}
-% \item The \textit{acoustic branch} vanishes linearly near $k = 0$ and corresponds to ordinary sound
-% \item The \textit{optical branch} is restricted higher frequencies since in solids these phonons are characteristically excited by light
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}{}
-% \begin{itemize}
-% \item For small $k$, the acoustic branch takes the form
-% \begin{align}
-% \omega_{\text{-}}(k) &= \sqrt{K}\sqrt{\frac{M_1 + M_2 - \sqrt{M_1^2 + 2 M_1 M_2 \left[1 - \frac{(k a)^2}{2}\right] + M_2^2}}{M_1 M_2}} \notag \\
-% &= \sqrt{K}\sqrt{\frac{M_1 + M_2 - (M_1 + M_2)\sqrt{1 - M_1 M_2 \frac{(ka)^2}{(M_1 + M_2)^2}}}{M_1 M_2}} \notag \\
-% &= \sqrt{K}\sqrt{\frac{M_1 + M_2 - (M_1 + M_2)\left[1 - \frac{M_1 M_2 (ka)^2}{2 (M_1 + M_2)^2}\right]}{M_1 M_2}} \notag \\
-% &= \sqrt{K}\sqrt{\frac{\frac{M_1 M_2 (ka)^2}{2 (M_1 + M_2)}}{M_1 M_2}} = k a \sqrt{\frac{K}{2 (M_1 + M_2)}}.
-% \end{align}
-% Plugging this back into Eq.~(\ref{eq:system_2}) gives $A_2 = (1 + i k a / 2) A_1$.
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}{}
-% \begin{itemize}
-% \item For small $k$, the optical branch takes the form
-% \begin{align}
-% \omega_{\text{+}}(k) &= \sqrt{K} \sqrt{\frac{M_1 + M_2 + (M_1 + M_2)}{M_1 M_2}} \notag \\
-% &= \sqrt{\frac{2 K (M_1 + M_2)}{M_1 M_2}}.
-% \end{align}
-% Plugging this back into Eq.~(\ref{eq:system_1}) gives
-% \begin{align}
-% A_2 = -\frac{M_1}{M_2} \left(1 + \frac{i k a}{2}\right) A_1.
-% \end{align}
-% \item Thus, for the acoustic mode, atoms within the unit cell move essentially in unison, while for the optical mode, atoms within the unit cell vibrate out of phase.
-% \end{itemize}
-% \end{frame}
-
-\begin{frame}{Crystalline lattices are \textbf{not} 1D chains}
+\begin{frame}{Miao and Dean's \textit{Incommensurate Phonon Anomaly and the Nature of Charge Density Waves in Cuprates (2018)}}
 \begin{itemize}
-% \item They are not 3D mass-spring lattices either
-% \item But the idea is correct given small deviations
-\item Let $\vf{u}^1$ ... $\vf{u}^N$ describe the displacement of ions $1$ ... $N$ from their equilibrium locations $\vf{R}^1$ ... $\vf{R}^N$
-\item Take the energy functional to be
-\begin{align*}
-\mathcal{E}(\vf{u}^1, \vf{u}^2~...~\vf{u}^N) = \mathcal{E}(u_x^1, u_y^1, u_z^1, u_x^2, u_y^2, u_z^2~...~u_x^N, u_y^N, u_z^N).
-\end{align*}
-\item The second-order Taylor series expansion around $\vf{O} = (\vf{0}^1, \vf{0}^2~...~\vf{0}^N)$ is
-\begin{align*}
-\mathcal{E} = \mathcal{E}(\vf{O}) + \sum_{\alpha,i} \frac{\partial \mathcal{E}(\vf{O})}{\partial u_\alpha^i}u_\alpha^i + \frac{1}{2} \sum_{\alpha,i} \sum_{\beta,j} \frac{\partial^2 \mathcal{E}(\vf{O})}{\partial u_\alpha^i \partial u_\beta^j} u_\alpha^i u_\beta^j,
-\end{align*}
-where $\alpha$ and $\beta$ range over $x$, $y$, and $z$, and $i$ and $j$ range from $1$ to $N$.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{}
-\begin{itemize}
-\item The first term is the cohesive energy, which is a constant denoted by $\mathcal{E}_c$
-\item Since the lowest energy state is a minimum as a function of ion locations, $\partial \mathcal{E}(\vf{O}) / \partial u_\alpha^i$ is zero for every $\alpha$ and $i$. The second term is zero
-\begin{align}
-\mathcal{E} = \mathcal{E}_c + \frac{1}{2} \sum_{\alpha,i} \sum_{\beta,j} u_\alpha^i \Phi_{\alpha \beta}^{i j} u_\beta^{j}, \label{eq:3d_energy}
-\end{align}
-where $\Phi_{\alpha \beta}^{i j}$ is given by
-\begin{align}
-\Phi_{\alpha \beta}^{i j} = \frac{\partial^2 \mathcal{E}(\vf{O})}{\partial u_\alpha^i \partial u_\beta^j}.
-\end{align}
+\item \textit{Goal:} unifying description for superconducting cuprates
 \end{itemize}
 \end{frame}
 
@@ -334,58 +259,6 @@ where $\Phi_{\alpha \beta}^{i j}$ is given by
 % \end{itemize}
 % \end{frame}
 
-\begin{frame}{}
-\begin{itemize}
-\item Taking the derivative to find force
-\begin{align*}
-% \frac{\partial \mathcal{E}}{\partial u_x^l} &=&&(\Phi_{xx}^{ll} u_x^l + \Phi_{xy}^{ll} u_y^l + \Phi_{xz}^{ll} u_z^l) + \\
-% & &&\sum_{i \neq l} (\Phi_{xx}^{il} u_x^i + \Phi_{yx}^{il} u_y^i + \Phi_{zx}^{il} u_x^i) \\
-% &=&&\sum_{i} (\Phi_{xx}^{li} u_x^i + \Phi_{xy}^{li} u_y^i + \Phi_{xz}^{li} u_z^i). \\
-F_x &=&&-\frac{\partial \mathcal{E}}{\partial u_x^l} = -\sum_i
-\begin{bmatrix}
-\Phi_{xx}^{li} & \Phi_{xy}^{li} & \Phi_{xz}^{li}
-\end{bmatrix}
-\begin{bmatrix}
-u_x^i & u_y^i & u_z^i
-\end{bmatrix}^\text{T}.
-\end{align*}
-\item Similarly for $F_y$ and $F_z$, the equation of motion is therefore
-\begin{align}
-\boxed{M \ddot{\vf{u}}^l = -\sum_i
-\begin{bmatrix}
-\Phi_{xx}^{li} & \Phi_{xy}^{li} & \Phi_{xz}^{li} \\
-\Phi_{yx}^{li} & \Phi_{yy}^{li} & \Phi_{yz}^{li} \\
-\Phi_{zx}^{li} & \Phi_{zy}^{li} & \Phi_{zz}^{li}
-\end{bmatrix}
-\begin{bmatrix}
-u_x^i \\
-u_y^i \\
-u_z^i
-\end{bmatrix} = -\sum_i \Phi^{li} \vf{u}^i}, \label{eq:phonon_motion}
-\end{align}
-where the subscripts are suppressed in the $3 \times 3$ matrix $\Phi^{li}$.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{}
-\begin{itemize}
-\item Eq.~(\ref{eq:phonon_motion}) is solved by plane waves in a 3D crystal, so we take
-\begin{align}
-\vf{u}^l = \vf{A} e^{i (\vf{k} \cdot \vf{R}^l - \omega t)}.
-\end{align}
-Substituting in Eq.~(\ref{eq:phonon_motion}) gives
-\begin{align}
--M \omega^2 \vf{A} e^{i \vf{k} \cdot \vf{R}^l} e^{- i \omega t} &= -\sum_{l^{\prime}} \Phi^{l l^{\prime}} \vf{A} e^{i(\vf{k} \cdot \vf{R}^{l^{\prime}} - \omega t)} \\
-M \omega^2 \vf{A} &= \sum_{l^{\prime}} \Phi^{l l^{\prime}} e^{i \vf{k} \cdot (\vf{R}^{l^{\prime}} - \vf{R}^l)} \vf{A} \notag \\
-&= \Phi(\vf{k}) \vf{A}, \label{eq:phonon_motion_matrix}
-\end{align}
-where we replace the dummy index $i$ with $l^{\prime}$ to distinguish from the imaginary unit, and
-\begin{align}
-\Phi(\vf{k}) = \sum_{l^{\prime}} e^{i \vf{k} \cdot (\vf{R}^l - \vf{R}^{l^{\prime}})} \Phi^{l l^{\prime}}. \label{eq:dyn_matrix}
-\end{align}
-\item Eq.~(\ref{eq:phonon_motion_matrix}) is a matrix equation for the polarization vector $\vf{A}$
-\end{itemize}
-\end{frame}
 
 % \begin{frame}{}
 % \begin{itemize}

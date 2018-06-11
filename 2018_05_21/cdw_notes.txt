@@ -1,0 +1,76 @@
+* What is a charge density wave (CDW)?
+- In low dimentional metals at low temperature, CDW is a coupled modulation of conduction electron density and the atomic positions
+- Metals undergo a phase transition when they are cooled.
+- i.e. iron and nickel become FM. Lead and Al become superconductors
+- Since 1970s, many metals with reduced dimentionality have been found to undergo a different type of a phase transition called CDW
+- And studying this behavior has been one of the interests of condensed matter physics
+
+* Formulation of CDWs
+- In 1955, Rudolf Peierls ('pai-earlz)
+- The modulations have wavelength of pi / k_F,
+- consider a metal chain
+- the allowed conduction electrons form a band
+- states with k < k_F are occupied
+- gap at k = \pm k_F, the energy of occupied states below e_F will be lower, and a prefered ground state
+- how is the gap produced? too detailed explanation by Frohlich and Peierls
+
+* Goal: find how phonons change in the presense of CDW
+- CDWs are pretty common in superconducting cuprates
+- But they have different wave vectors
+- Finding unifying descirption for superconducing cuprates is not easy
+- Miao and Dean's paper: study how phonons change at different temperature
+
+* Inelastic X-ray scattering measurement of S(Q, omega)
+- fig 1
+
+* fig 3
+
+- Q: why care only about low energy phonons
+
+- Q: Does "214"-cuprates mean X2CuO4?
+
+- Q: What does "the different ordering wave vectors" mean?
+La2CuO4 and YBCO?
+
+- CDW is a periodic motion of charge density that results from distortion of the crystal lattice.
+    Q: does that mean CDW always occurs?
+    Q: CDW is a kind of spin ordering?
+    Q: CDW = Flip?
+
+Q: What is incommensurability? (0.3, 0)
+"with an incommensurability that appears locked to the spin
+density wave (SDW) correlations around (0.375,0.5) (i.e.,
+with an incommensurability of 1/8 relative to the antiferromagnetic
+wave vector)"
+Q: When CDW and SDW are not of the same periodicity (or a rational multiple), they are called incommensurate?
+
+
+# It is sometimes more energetically favorable for electrons to take this configuration, and the atoms follow suit.
+
+- S(Q, omege) but plot omega vs K = Qy
+    Q: is K the same as Q?
+
+Q: why they did it?
+A: because they can
+
+Q: What is phonon dynamic susceptibility, X(Q, omega)? they measured X
+Q: Why calculate it?
+
+Q: How does phonon softening imply CDW?
+
+Q: Are La2CuO4 quasi-two-dimentional?
+
+Q: How are these two related?
+    - Me: Use CRYSTAL to diagonalize the dynamical matrices
+    - Paper: Find S(Q, omega) supposed to have peaks
+    fourier transform of correlation function
+
+Q: How does plotting hole charge density tell us anything about CDW?
+
+zero mode (didn't scatter)
+doping weakens the Sr-O bond
+
+Q: What is short-ranged CDW correlation?
+
+Q: What is phonon broadening
+A: peak

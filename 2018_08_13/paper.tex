@@ -34,7 +34,7 @@
   \end{frame}
 }
 
-\title[]{The competing nature between superconductivity and charge density wave}
+\title[]{The Fermi surface and competition between superconductivity and charge density wave}
 \author{Mick Krongchon}
 \institute{University of Illinois at Urbana-Champaign}
 \date{\today}
@@ -45,26 +45,27 @@
 \titlepage
 \end{frame}
 
-% \begin{frame}{}
-% \begin{itemize}
-%   \item
-% \end{itemize}
-% \end{frame}
+\begin{frame}{}
+\centering
+\textit{intentionally left blank}
+\end{frame}
 
 \begin{frame}{Outline}
 \begin{itemize}
 \item Why care about the Fermi surface?
+\item Evidence of competition between superconductivity and charge density wave
+\item Conclusion
 % \item Summary of Miao and Dean's paper
 % \item My research
-% \item Conclusion
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Why care about the Fermi surface (FS)?}
 \begin{itemize}
   \item The origins of various phenomena can be traced back to the FS shape
+  \item Helps understand the mechanism of charge density waves
   \item Can be experimentally measured
-  \item
+  % \item
 
   % \item The Fermi surface is the surface in reciprocal space which separates occupied from unoccupied electron states at zero temperature
 
@@ -77,11 +78,11 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{How to calculate to the Fermi surface (FS)}
+\begin{frame}{How to calculate the FS}
 \begin{itemize}
-  \item Calculate the band structure using some method (tight binding, DFT, HF, etc.)
-  \item Know the Fermi energy, $E_F$, from the number of electrons (I think)
-  \item FS is a plot of constant energy with $E = E_F$
+\item Calculate the band structure using some method (by hand, tight binding, DFT, HF, etc.)
+\item Know the Fermi energy, $E_F$, from the number of electrons
+\item FS is a plot of constant energy with $E = E_F$
 \end{itemize}
 \end{frame}
 
@@ -89,245 +90,251 @@
 \begin{itemize}
 \item The Fermi energy is given by
 \begin{align}
-E_F = \frac{\hbar^2}{2 m}
+E_F = \frac{\hbar^2}{2 m}\left(\frac{\pi n_F}{L}\right)^2 = \frac{\hbar^2}{2 m}\left(\frac{\pi N}{2 L}\right)^2,
 \end{align}
-
-\end{itemize}
-\end{frame}
-
-% \begin{frame}{Classical 1D chain with two masses}
-% \begin{itemize}
-% \item Each atom interacts only with its nearest neighbors
-% \item The system equations are
-% \begin{align*}
-% M_1 \frac{d^2}{dt^2} u_1^l = K(u_2^l - u_1^l) - K(u_1^l - u_2^{l - 1}) = K(u_2^l - 2u_1^l + u_2^{l - 1}). \\
-% M_2 \frac{d^2}{dt^2} u_2^l = K(u_1^{l + 1} - u_2^l) - K(u_2^l - u_1^l) = K(u_1^{l + 1} - 2u_2^l + u_1^l).
-% \end{align*}
-% \begin{figure}
-% \includegraphics[width=3in]{figs/1d_diagram.png}
-% \caption{\label{fig:1d_diagram}} % Alternating masses $M_1$ and $M_2$ interacting with nearest neighbors
-% \end{figure}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}{Phonon branches}
-% \begin{itemize}
-% \item Plug in $u_j^l = A_j e^{i(kla - \omega t)}$
-% \item Solve for $\omega$ that gives no trivial solutions (setting $M_2 = r M_1$):
-% \begin{align}
-% \omega = \sqrt{\frac{K}{M_1}}
-% \sqrt{\frac{1 + r \pm \sqrt{1 + 2r\cos{ka} + r^2}}{r}}.
-% \end{align}
-% \begin{figure}
-% \includegraphics[width=3in]{figs/1d_dispersion.pdf}
-% \caption{\label{fig:1d_dispersion} $\omega(k)$ when $r = 3$}
-% \end{figure}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}{Crystalline lattices are \textbf{not} 1D chains}
-% \begin{itemize}
-% % \item They are not 3D mass-spring lattices either
-% % \item But the idea is correct given small deviations
-% % \item Let $\vf{u}^1$ ... $\vf{u}^N$ describe the displacement of ions $1$ ... $N$ from their equilibrium locations $\vf{R}^1$ ... $\vf{R}^N$
-% \item Take the energy functional to be
-% \begin{align*}
-% \mathcal{E}(\vf{u}^1, \vf{u}^2~...~\vf{u}^N) = \mathcal{E}(u_x^1, u_y^1, u_z^1, u_x^2, u_y^2, u_z^2~...~u_x^N, u_y^N, u_z^N).
-% \end{align*}
-% \item The second-order Taylor series expansion around $\vf{O} = (\vf{0}^1, \vf{0}^2~...~\vf{0}^N)$ is
-% \begin{align}
-% \mathcal{E} &= \mathcal{E}(\vf{O}) + \sum_{\alpha,i} \frac{\partial \mathcal{E}(\vf{O})}{\partial u_\alpha^i}u_\alpha^i + \frac{1}{2} \sum_{\alpha,i} \sum_{\beta,j} \frac{\partial^2 \mathcal{E}(\vf{O})}{\partial u_\alpha^i \partial u_\beta^j} u_\alpha^i u_\beta^j, \\
-% &= \mathcal{E}_c + \frac{1}{2} \sum_{\alpha,i} \sum_{\beta,j} u_\alpha^i \Phi_{\alpha \beta}^{i j} u_\beta^{j}, \label{eq:3d_energy},
-% \end{align}
-% where $\alpha$ and $\beta$ range over $x$, $y$, and $z$, and $i$ and $j$ range from $1$ to $N$.
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}{}
-% \begin{itemize}
-% \item Taking the derivative to find force
-% \begin{align*}
-% F_x &=&&-\frac{\partial \mathcal{E}}{\partial u_x^l} = -\sum_i
-% \begin{bmatrix}
-% \Phi_{xx}^{li} & \Phi_{xy}^{li} & \Phi_{xz}^{li}
-% \end{bmatrix}
-% \begin{bmatrix}
-% u_x^i & u_y^i & u_z^i
-% \end{bmatrix}^\text{T}.
-% \end{align*}
-% \item Similarly for $F_y$ and $F_z$, the equation of motion is therefore
-% \begin{align}
-% \boxed{M \ddot{\vf{u}}^l = -\sum_i
-% \begin{bmatrix}
-% \Phi_{xx}^{li} & \Phi_{xy}^{li} & \Phi_{xz}^{li} \\
-% \Phi_{yx}^{li} & \Phi_{yy}^{li} & \Phi_{yz}^{li} \\
-% \Phi_{zx}^{li} & \Phi_{zy}^{li} & \Phi_{zz}^{li}
-% \end{bmatrix}
-% \begin{bmatrix}
-% u_x^i \\
-% u_y^i \\
-% u_z^i
-% \end{bmatrix} = -\sum_i \Phi^{li} \vf{u}^i}, \label{eq:phonon_motion}
-% \end{align}
-% where the subscripts are suppressed in the $3 \times 3$ matrix $\Phi^{li}$.
-% \item Plug in, $\vf{u}^l = \vf{A} e^{i (\vf{k} \cdot \vf{R}^l - \omega t)}$
-% \begin{align}
-% M \omega^2 \vf{A} &= \sum_{l^{\prime}} \Phi^{l l^{\prime}} e^{i \vf{k} \cdot (\vf{R}^{l^{\prime}} - \vf{R}^l)} \vf{A} = \Phi(\vf{k}) \vf{A}, \label{eq:phonon_motion_matrix}
-% \end{align}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}{What is charge density waves (CDW)}
-% \begin{itemize}
-% \item The electron density in metals is uniform
-% \item The equilibrium positions form a perfectly periodic lattice
-% \item When $T < T_c$, the Fermi surface becomes unstable
-% \item The instability may result in periodic charge density modulation called CDW
-% \item In 1950s, Fr\"{o}hlich tried to explain SC that electrons and lattices move together
-% % \item No unifying description for CDW in different systems?
-% \end{itemize}
-% \end{frame}
-
-\begin{frame}{Peierls' picture: 1D chain}
-\begin{itemize}
-% \item In 1930s, Peierls described the instability in a 1D chain of equally spaced atoms
-% \item The only zero energy transition is from $k_F$ to $-k_F$, % where $k_F$ is the Fermi wave number
-\item The Fermi points are at $k_F = \pm \pi / 2 a$ % connected by a vector $q = 2 k_F$
-% \item The disturbance with $q = 2 k_F$ changes spacing to $2 a$
-\item Gap occurs at $k = \pm \pi / 2 a$ when $T < T_c$
-\item Metal-to-insulator transition at $T_c$ is called \textbf{Peierls' transition}
-% \begin{figure}
-% \includegraphics[width=3in]{figs/density_fermi.pdf}
-% \caption{\label{fig:density_fermi} (a, c) $T > T_c$ (b, d) $T < T_c$}
-% \end{figure}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Free electron gas model}
-\begin{itemize}
-\item \textbf{Lindhard response function} $\chi(q)$ describes free electron gas' response
-\item 1D electron gas is unstable
-% \begin{figure}
-% \includegraphics[width=2.5in]{figs/lindhart.png}
-% \caption{\label{fig:lindhart} Real part of Linhard function for 1D, 2D and 3D free electron gas models}
-% \end{figure}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Kohn anomaly}
-\begin{itemize}
-\item In 1959, Kohn: The excitations at $2 k_F$ will screen any lattice motion with this wave vector
-\item The phonon modes near $2 k_F$ will drop to a lower energy
-\item This is called \textbf{phonon softening}
-%  This strong renormalization of the phonon due to interactions with an electron system is referred to as the Kohn anomaly
-% \begin{figure}
-% \includegraphics[width=2in]{figs/kohn_anomaly.png}
-% \caption{\label{fig:kohn_anomaly} Phonon energy of 1D chain at different $T$}
-% \end{figure}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Miao and Dean's \textit{Incommensurate Phonon Anomaly and the Nature of Charge Density Waves in Cuprates} (2018)}
-\begin{itemize}
-\item \textit{Goal:} Find unifying description for superconducting cuprates
-\item CDW instabilities are common superconducting cuprates
-\item CDWs have different ordering wave vectors
-\item They measured the $T$ dependence of the low-energy phonons in La$_{1.875}$Ba$_{0.125}$CuO$_4$ and compared it to YBa$_2$Cu$_3$O$_{6 + \delta}$
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Inelastic x-ray scattering measurement of $S(\vf{Q}, \omega)$}
-\begin{itemize}
-\item Why measured $S(\vf{Q}, \omega)$? ``Because they can" - Lucas
-% \item Dashed lines are calculated using DFPT with PBE functional
-% \begin{figure}
-% \includegraphics[width=3.5in]{figs/exp_sq.pdf}
-% \caption{\label{fig:exp_sq} Phonon dynamic structure factor at $T = 300~\mathrm{K}$}
-% \end{figure}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Example fits of spectra at $K$ = 0.09, 0.23, and 0.31 r.l.u. at different $T$}
-% \begin{figure}
-% \includegraphics[width=3.5in]{figs/exp_fit.pdf}
-% \caption{\label{fig:exp_fit} }
-% \end{figure}
-\end{frame}
-
-\begin{frame}{Peaks at different $T$}
-% \begin{figure}
-% \includegraphics[width=2.2in]{figs/exp_E_k.png}
-% \caption{\label{fig:exp_E_k} $Q_{\text{CDW}} = 0.23~\mathrm{r.l.u.}$}
-% \end{figure}
-\end{frame}
-
-\begin{frame}{$T$ dependence at $K = 0.23~\mathrm{r.l.u.}$}
-\begin{itemize}
-\item Since they found that $M2$ has a large component of $c$-axis displacements, they suggest that $c$-axis coupled most strongly to the CDW
-% \begin{figure}
-% \includegraphics[width=3.5in]{figs/exp_T_dependence.png}
-% \caption{\label{fig:exp_T_dependence} $T_{\text{CDW}} = 55~\mathrm{K}$}
-% \end{figure}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Maximum phonon softening moves with increasing $T$}
-\begin{itemize}
-\item They conclude that $Q_{\text{CDW}} = 0.238~\mathrm{r.l.u.}$ at $T = 55~\mathrm{K}$, and $Q_{\text{CDW}} = 0.3~\mathrm{r.l.u.}$ at $T = 300~\mathrm{K}$
-\item Which is similar to a wave vector reported in YBa$_2$Cu$_3$O$_{6 + \delta}$
-% \begin{figure}
-% \includegraphics[width=2.5in]{figs/exp_E_k_zoomed.pdf}
-% \caption{\label{fig:exp_E_k_zoomed} }
-% \end{figure}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{My research}
-\begin{itemize}
-\item \textit{Goal:} Identify phonon-softening modes of charge density waves in \ce{SrCuO2} and \ce{La2CuO4}???
-\item Step 1: Optimize the geometry of undoped and 1/4-doped \ce{SrCuO2} using DFT with 2x2 unit cells and PBEsol functional
-\item Step 2: Find phonon frequencies and eigenvectors at the gamma point
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Identify how modes change after doping}
-\begin{itemize}
-\item The matrix element of $i$th AFM mode and $j$th Flip mode
+because orbitals must be filled up to $n_F$ for $N$ electrons given by
 \begin{align}
-e_{ij} = \sum_{k = 1}^{48} v_{\text{AFM}, ik} \times v_{\text{Flip}, jk}
+N = 2 \times \frac{1}{2} \times 2 n_F = 2 n_F,
 \end{align}
-\item The two modes whose dot product is more than 0.8 are consider to be the same
-\begin{table}
-% \centering
-% \caption{\label{tab:dot} Dot products of  \ce{SrCuO2} (normallized within each column)}
-% \caption{\label{tab:widgets}Example values of the magnetic susceptibility, $\chi_v$.}
-\begin{tabular}{ccccccccccc}
-AFM / Flip & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
-% \colrule \\
-1 & 0 & 0 & 0.895 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-2 & 0.895 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-3 & 0 & 0.875 & 0 & 0 & 0 & 0 & 0.001 & 0 & 0 & 0.047 \\
-4 & 0 & 0 & 0 & 0.805 & 0 & 0 & 0 & 0 & 0 & 0 \\
-5 & 0 & 0 & 0 & 0 & 0.806 & 0 & 0 & 0 & 0 & 0 \\
-6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1.000 & 0 \\
-\end{tabular}
-\end{table}
+where $n_F$ is the radius of an integer-space ``sphere''.
+\item The Fermi surface is points at $\pm \pi N / 2 L$
 \end{itemize}
 \end{frame}
 
-\begin{frame}{The change in phonon frequency}
-% \begin{figure}
-% \includegraphics[width=4.2in]{figs/sco_afm_flip_freq.pdf}
-% \caption{\label{fig:sco_afm_flip_freq} See AVI files}
-% \end{figure}
+\begin{frame}{This FS geometry leads to a divergent response}
+\begin{itemize}
+\item The rearrangement of the charge density in a potential $\phi(\vf{r})$ can be written as
+\begin{align}
+\rho(\vf{q}) = \chi(\vf{q}) \phi(\vf{q}),
+\end{align}
+where $\chi(\vf{q})$ is the Lindhart function given in $d$ dimensions by
+\begin{align}
+\chi(\vf{q}) = \frac{1}{(2 \pi)^d} \int \frac{f_k - f_{k + q}}{E_k - E_{k + q}} d \vf{k},
+\end{align}
+which in the 1D case, evaluates to
+\begin{align}
+\chi(q) = \frac{k_F}{\pi E_F q}\ln{\left|\frac{q + 2k_F}{q - 2k_F}\right|}.
+\end{align}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{An external perturbation leads to a divergent charge density}
+\begin{itemize}
+\item Causes a charge density redistribution
+\item The divergence at $q = 2 k_F$ is called \textbf{perfect nesting}
+\begin{figure}
+\includegraphics[width=1.5in]{figs/1d_nesting.png}
+\caption{\label{fig:1d_nesting} Fermi surface topology for a 1D electrong gas, The arrows indicate pairs of states, differing by the
+wavevector $q = 2 k_F$.}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The rearrangement of atoms and charges results in a lower energy}
+\begin{itemize}
+\item The new lattice has a period of $2a$
+\item The $\vf{k}$ vector now range from $-\pi / 2a$ to $\pi / 2a$
+\item The band is now split into two bands
+\item The atomic motion is causing the electrons to reconfigure
+\item This is called a \textbf{charge density wave (CDW)}
+\begin{figure}
+\includegraphics[width=3.5in]{figs/gap.png}
+\caption{\label{fig:gap} Peierls distortion in a one-dimensional metal with a half-filled band: (a) undistorted metal, (b) Peierls insulator.}
+\end{figure}
+% Imagine a line of atoms on equally-spaced positions sharing their electrons to make a conduction band.
+% You have exactly one electron per atom.
+% And, the k-vectors range from −π/a to π/a.
+%% The electrons are split in spin 50/50, so you get filling of the states in the first band up to exactly ±π/2a, and that's the Fermi surface (two points). This is called a half-filled band, since the states are filled duplicately until the exact half-way point.
+% But if there's electron-electron or electron-phonon interaction
+% period of the lattice is given by lambda = pi / k_F
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What about superconductivity (SC)?}
+\begin{itemize}
+\item In 1954, Fröhlich attempted to explain SC using CDW (even before the BCS theory)
+\item His model was not wrong but incomplete (did not explain the Meissner effect)
+\item SC occurs in proximity to CDW
+\item Question: Is this significant (SC emerges from CDW) or trivial (the electronic structure independently favors both)?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Evidence of the competition between SC and CDW}
+\begin{itemize}
+\item J. Chang et al's \textit{Direct observation of competition between superconductivity and charge density wave order in YBa$_2$Cu$_3$O$_{6.67}$} (2012)
+\item Want to measure when such states exist
+\item X-ray diffration in magnetic fields up to 17~T with the hole concentration per Cu $p = 0.12$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Results: The CDW signal increases when SC is suppressed at $H = 17~T$ and $T = 2~K$}
+\begin{itemize}
+\item The charge modulation has two field- and temperature-independent wave vectors $\vf{q}_{\text{CDW}} = \vf{q}_1 = (\delta_1, 0, 0.5)$ and $\vf{q}_2 = (0, \delta_2, 0.5)$ where $\delta_1 = 0.305$ and $\delta_2 = 0.315$
+% \item The CDW gives rise to peaks the at $\vf{Q} = (2 \pm \delta_1, 0, 0.5)$
+\end{itemize}
+\begin{figure}
+\includegraphics[width=\textwidth]{figs/chang_1.pdf}
+\caption{\label{fig:chang_1} Scans along $(h, 0, 0.5)$ for temperature and magnetic fields: (a) $T < T_c$, (b) $T_c < T < T_{\text{CDW}}$, (c) $T > T_{\text{CDW}}$}
+\end{figure}
+\end{frame}
+
+\begin{frame}{The FS of YBCO consists of bonding and anti-bonding sheets (according to ARPES and LDA)}
+\begin{itemize}
+\item The electronic states connected by $\vf{q}_{\text{CDW}}$ are the bonding bands near the zone boundary
+\item The states lie near the maxima of the superconducting gap
+\item This (probably) means the CDW state is competing with SC for FS
+\begin{figure}
+\includegraphics[width=1.5in]{figs/chang_3.pdf}
+\caption{\label{fig:chang_3} FS of YBCO}
+\end{figure}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Conclusion}
 \begin{itemize}
-\item Kohn: Charge density waves affect phonon frequencies
-\item Dean: CDW in LCO and YBCO might be of the same origin (they both have $Q_{\text{CDW}} = 0.3~\mathrm{r.l.u.} at T = 300~\mathrm{K}$)
-\item My research: Doping weakens the Sr-O and Cu-O bonds
+\item The Fermi surface nesting results in a diverging charge distribution
+\item The atomic distortion and electron rearrangement to the lower energy are called \textbf{charge density wave}
+\item The charge density wave signal increases when the superconductivity is suppressed
 \end{itemize}
 \end{frame}
+
+% \begin{frame}{Peierls' picture: 1D chain}
+% \begin{itemize}
+% % \item In 1930s, Peierls described the instability in a 1D chain of equally spaced atoms
+% % \item The only zero energy transition is from $k_F$ to $-k_F$, % where $k_F$ is the Fermi wave number
+% \item The Fermi points are at $k_F = \pm \pi / 2 a$ % connected by a vector $q = 2 k_F$
+% % \item The disturbance with $q = 2 k_F$ changes spacing to $2 a$
+% \item Gap occurs at $k = \pm \pi / 2 a$ when $T < T_c$
+% \item Metal-to-insulator transition at $T_c$ is called \textbf{Peierls' transition}
+
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Free electron gas model}
+% \begin{itemize}
+% \item \textbf{Lindhard response function} $\chi(q)$ describes free electron gas' response
+% \item 1D electron gas is unstable
+% % \begin{figure}
+% % \includegraphics[width=2.5in]{figs/lindhart.png}
+% % \caption{\label{fig:lindhart} Real part of Linhard function for 1D, 2D and 3D free electron gas models}
+% % \end{figure}
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Kohn anomaly}
+% \begin{itemize}
+% \item In 1959, Kohn: The excitations at $2 k_F$ will screen any lattice motion with this wave vector
+% \item The phonon modes near $2 k_F$ will drop to a lower energy
+% \item This is called \textbf{phonon softening}
+% %  This strong renormalization of the phonon due to interactions with an electron system is referred to as the Kohn anomaly
+% % \begin{figure}
+% % \includegraphics[width=2in]{figs/kohn_anomaly.png}
+% % \caption{\label{fig:kohn_anomaly} Phonon energy of 1D chain at different $T$}
+% % \end{figure}
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Miao and Dean's \textit{Incommensurate Phonon Anomaly and the Nature of Charge Density Waves in Cuprates} (2018)}
+% \begin{itemize}
+% \item \textit{Goal:} Find unifying description for superconducting cuprates
+% \item CDW instabilities are common superconducting cuprates
+% \item CDWs have different ordering wave vectors
+% \item They measured the $T$ dependence of the low-energy phonons in La$_{1.875}$Ba$_{0.125}$CuO$_4$ and compared it to YBa$_2$Cu$_3$O$_{6 + \delta}$
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Inelastic x-ray scattering measurement of $S(\vf{Q}, \omega)$}
+% \begin{itemize}
+% \item Why measured $S(\vf{Q}, \omega)$? ``Because they can" - Lucas
+% % \item Dashed lines are calculated using DFPT with PBE functional
+% % \begin{figure}
+% % \includegraphics[width=3.5in]{figs/exp_sq.pdf}
+% % \caption{\label{fig:exp_sq} Phonon dynamic structure factor at $T = 300~\mathrm{K}$}
+% % \end{figure}
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Example fits of spectra at $K$ = 0.09, 0.23, and 0.31 r.l.u. at different $T$}
+% % \begin{figure}
+% % \includegraphics[width=3.5in]{figs/exp_fit.pdf}
+% % \caption{\label{fig:exp_fit} }
+% % \end{figure}
+% \end{frame}
+
+% \begin{frame}{Peaks at different $T$}
+% % \begin{figure}
+% % \includegraphics[width=2.2in]{figs/exp_E_k.png}
+% % \caption{\label{fig:exp_E_k} $Q_{\text{CDW}} = 0.23~\mathrm{r.l.u.}$}
+% % \end{figure}
+% \end{frame}
+
+% \begin{frame}{$T$ dependence at $K = 0.23~\mathrm{r.l.u.}$}
+% \begin{itemize}
+% \item Since they found that $M2$ has a large component of $c$-axis displacements, they suggest that $c$-axis coupled most strongly to the CDW
+% % \begin{figure}
+% % \includegraphics[width=3.5in]{figs/exp_T_dependence.png}
+% % \caption{\label{fig:exp_T_dependence} $T_{\text{CDW}} = 55~\mathrm{K}$}
+% % \end{figure}
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Maximum phonon softening moves with increasing $T$}
+% \begin{itemize}
+% \item They conclude that $Q_{\text{CDW}} = 0.238~\mathrm{r.l.u.}$ at $T = 55~\mathrm{K}$, and $Q_{\text{CDW}} = 0.3~\mathrm{r.l.u.}$ at $T = 300~\mathrm{K}$
+% \item Which is similar to a wave vector reported in YBa$_2$Cu$_3$O$_{6 + \delta}$
+% % \begin{figure}
+% % \includegraphics[width=2.5in]{figs/exp_E_k_zoomed.pdf}
+% % \caption{\label{fig:exp_E_k_zoomed} }
+% % \end{figure}
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{My research}
+% \begin{itemize}
+% \item \textit{Goal:} Identify phonon-softening modes of charge density waves in \ce{SrCuO2} and \ce{La2CuO4}???
+% \item Step 1: Optimize the geometry of undoped and 1/4-doped \ce{SrCuO2} using DFT with 2x2 unit cells and PBEsol functional
+% \item Step 2: Find phonon frequencies and eigenvectors at the gamma point
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Identify how modes change after doping}
+% \begin{itemize}
+% \item The matrix element of $i$th AFM mode and $j$th Flip mode
+% \begin{align}
+% e_{ij} = \sum_{k = 1}^{48} v_{\text{AFM}, ik} \times v_{\text{Flip}, jk}
+% \end{align}
+% \item The two modes whose dot product is more than 0.8 are consider to be the same
+% \begin{table}
+% % \centering
+% % \caption{\label{tab:dot} Dot products of  \ce{SrCuO2} (normallized within each column)}
+% % \caption{\label{tab:widgets}Example values of the magnetic susceptibility, $\chi_v$.}
+% \begin{tabular}{ccccccccccc}
+% AFM / Flip & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+% % \colrule \\
+% 1 & 0 & 0 & 0.895 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+% 2 & 0.895 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+% 3 & 0 & 0.875 & 0 & 0 & 0 & 0 & 0.001 & 0 & 0 & 0.047 \\
+% 4 & 0 & 0 & 0 & 0.805 & 0 & 0 & 0 & 0 & 0 & 0 \\
+% 5 & 0 & 0 & 0 & 0 & 0.806 & 0 & 0 & 0 & 0 & 0 \\
+% 6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1.000 & 0 \\
+% \end{tabular}
+% \end{table}
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{The change in phonon frequency}
+% % \begin{figure}
+% % \includegraphics[width=4.2in]{figs/sco_afm_flip_freq.pdf}
+% % \caption{\label{fig:sco_afm_flip_freq} See AVI files}
+% % \end{figure}
+% \end{frame}
+
+% \begin{frame}{Conclusion}
+% \begin{itemize}
+% \item Kohn: Charge density waves affect phonon frequencies
+% \item Dean: CDW in LCO and YBCO might be of the same origin (they both have $Q_{\text{CDW}} = 0.3~\mathrm{r.l.u.} at T = 300~\mathrm{K}$)
+% \item My research: Doping weakens the Sr-O and Cu-O bonds
+% \end{itemize}
+% \end{frame}
 
 \end{document}
